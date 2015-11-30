@@ -1,6 +1,11 @@
+PImage mural;
 String inputedText  = "";
+String wordIncluded = "";
 Boolean printRect= false;
+Boolean noMatch = true;
+int matchCheckCounter = 0;
 void setup(){
+  mural = loadImage("mural.jpg");
   size(440,440);
   background(0);
 }
@@ -10,17 +15,42 @@ void keyReleased() {
       inputedText+=key; 
 }
 void Print__Image(Boolean Prect) {
-  if (inputedText.matches(".*hey.*"))
+  if (inputedText.matches(".*"+wordIncluded+".*"))
     Prect=true;
 }
 void draw(){
       Print__Image(printRect);
-      if (inputedText.matches(".*hey.*"))
-        printRect=true;
-      else{
+
+          switch(wordIncluded)
+          {
+             case "hey":
+               if (inputedText.matches(".*"+wordIncluded+".*"))
+              {
+                printRect=true;
+                noMatch=false;
+              }
+               break;
+             case "banana":
+               if (inputedText.matches(".*"+wordIncluded+".*"))
+              {
+                printRect=true;
+                noMatch=false;
+              }
+               break;
+             case "mural":
+              if (inputedText.matches(".*"+wordIncluded+".*"))
+              {
+                printRect=true;
+                noMatch=false;
+              }
+               image(mural, 222, 222); 
+          }
+        if(printRect=false){
         printRect=false;
+        noMatch=true;
         clear();
-      }
+        }
+
       if (keyPressed) {
       if (key == 'b' || key == 'B') {
         fill(0);
