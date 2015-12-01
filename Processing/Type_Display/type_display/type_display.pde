@@ -1,10 +1,11 @@
 PImage mural;
 String inputedText  = "";
 Boolean printRect= false;
-String[] wordIncluded = {"banana","mural","hey"};
+String[] wordIncluded = {"banana","mural","hey", "computer", "command"};
 String[] sentenceIncluded = {"banana","mural","hey"};
 static short sWidth = 860;
 static short sHeight = 640;
+short inputLine = 90;
 void setup(){
   mural = loadImage("mural.jpg");
   size(860,640);
@@ -20,6 +21,7 @@ void Print__Image(Boolean Prect) {
     //Prect=true;
 }
 void draw(){
+  text(inputedText, 10, inputLine); 
   Print__Image(printRect);
   for(int i=0; i<wordIncluded.length;i++)
   {
@@ -34,14 +36,30 @@ void draw(){
           printRect=true;
         break;
        case "mural":
-        if (inputedText.matches(".*"+wordIncluded[i]+".*"))
-        {
-         image(mural, (width/2), sHeight*0.5);
-         printRect=false;
+       if (inputedText.matches(".*"+wordIncluded[i]+".*"))
+       {
+         image(mural, 30, sHeight*0.5);
+       }
+       break;
+       case "computer":
+       if (inputedText.matches(".*"+wordIncluded[i]+".*"))
+       {
+         text("What do you need me to do?", 10, 150);
+       }
+       break;
+       case "command":
+       if (inputedText.matches(".*"+wordIncluded[i]+".*"))
+       {
+         inputedText="";
+         text("Activate System", 10, 180);
+         inputLine=120;
+           
         }
         break;
         default:
+          clear();
           printRect=false;
+
     }
   }
   if (keyPressed) {
@@ -50,6 +68,7 @@ void draw(){
     }
     if(key== BACKSPACE && inputedText!="")
     {
+      inputLine=90;
       inputedText="";
       printRect=false;
       clear();
@@ -61,5 +80,4 @@ void draw(){
     rect(60, 60, 100, 100);
   //Testing Rectangular for debugging purposes
   //rect(44,44,44,44);
-  text(inputedText, 10, 90); 
 }
