@@ -7,6 +7,7 @@ public class test01{
 		calculations c1 = new calculations();
 		textInput i1 = new textInput();
 		Draw2D d2d = new Draw2D();		
+		Movement m = new Movement();
 
 		int i = 1;
 		System.out.println(i1.setQuestion());
