@@ -10,7 +10,7 @@ public final class RandomByte {
     Random randomGenerator = new Random();
 		byte[] nByte = new byte[1];
     randomGenerator.nextBytes(nByte);
-		log(nByte[0]);   	
+		//log(nByte[0]);   	
 		return nByte[0];
   }
   

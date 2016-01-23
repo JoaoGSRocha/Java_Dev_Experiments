@@ -1,4 +1,4 @@
-public class TTT_Logic {
+public class RPS_Logic {
 		OponentMoves{
 		b = sc.nextByte();
 		byte op =rb.getRandB();
