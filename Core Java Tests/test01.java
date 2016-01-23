@@ -20,7 +20,7 @@ public class test01{
 			int s = c1.sum();
 			//System.out.println(i1.setResponse(i, s, c1.response(), i1.response()));
 			System.out.println(d2d.DisplayArena01());
-			
+			d2d();
 			//c1.updateNotifications();
 		}	
 	}
