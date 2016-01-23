@@ -41,10 +41,19 @@ public Draw2D(){
 
 private void setASpecAreaID_St(){
   byte _c =  12; byte _r =  7;
+	byte inCells[][] = new byte[12][7];
+	byte ouCells[][] = new byte[12][7];
 	byte cells[][] = new byte[12][7];
+	char tokens[][] = new char[12][7];
+	String _row_out=""; //Row by row output 
 	for(int r=0; r<= _r; r++){	
-		for(int c=0; c<= _c; c++){	
-			cells[r][c] = 0;
+		for(int c=0; c<= _c; c++){
+			if(cells[r][c] == 0)					
+				IDcells[r][c] = 0;				
+//Token verification method to be replaced
+			if(cells[r][c] == 0)				//should be a case switch in the future
+				tokens[r][c]= '#';
+			if()
 		}
 	}
 	//setASpecArea2D_St(cells[rows][cols]);
@@ -85,6 +94,7 @@ private void setASpecArea2D_final(byte[][] ce){
 
 private void tokensVerification(String _r_o, char[][] tokens, byte[][] ce, int r, int c/*We should replace all of them by bytes later */ )
 {
+
 	if(ce[r][c] == 0)
 		tokens[r][c]= '#'; // It should be ' ',but we're testing
 	_r_o+= tokens[r][c];
