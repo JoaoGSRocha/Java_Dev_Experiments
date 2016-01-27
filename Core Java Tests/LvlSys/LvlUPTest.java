@@ -21,7 +21,13 @@ public class LvlUPTest {
 				lvl++;
 				xp = -128;
 			}
-			System.out.println("Do you want to play	R.P.S.? - Don't press 0.");
+			if(lvl>1)
+				System.out.println("Do you want to play	R.P.S.? - Don't press 0. \n Do you want to use the store? - Press 2");
+			else
+				System.out.println("Do you want to play	R.P.S.? - Don't press 0.");
+			if(play==2)
+				System.out.println("Buy: Pattern giver(4GP) - Type -15 "
+				+"\n Buy: Encrypted Win(24GP) - Type -25 \n Buy: 2 hour challenge(100GP) - Type -35 \n");
 			Scanner sc = new Scanner(System.in);
 			System.out.println("-------------------- \n \n You have "+coins+" coins. \n Your xp: "+xp);
 			play = sc.nextByte();
