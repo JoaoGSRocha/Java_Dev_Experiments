@@ -4,9 +4,25 @@ public class RPS_RTS_Test {
 		byte rN=0;
 		RandomByte rand = new RandomByte();
 		rN = rand.getRandB();
-		if(rN<10)
-			getCIvsPCC();
-		else System.out.println("Nope.");
+		byte rps_tok[] = new byte[3]; // Cav, Inf, Arch
+		byte enem, you = 0; 
+		for(byte c=0; c<rps_tok.length; c++)
+		{
+			rps_tok[c]=c;
+		}
+		if(rN>10 && rN<51)
+			System.out.println("They have fleed on the encounter of your kingdom!");
+		else if(rN>50)
+			System.out.println("They have infantry against you!");
+			enem = rps_tok[0]; 
+		else if(rN<-11 && rN>-90)
+			System.out.println("They have archers against you!");
+			enem = rps_tok[1];		
+		else if(rN>-10 && rN<=10)
+			System.out.println("They have cavalry against you!");
+			enem = rps_tok[2];		
+		else
+			System.out.println("It is not know what they have against you");
 	}
 
 	public static void getCIvsPCC()
